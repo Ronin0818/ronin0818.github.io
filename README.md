@@ -1,6 +1,6 @@
 # Song Tan · 谭松
 
-Personal academic homepage: https://rontan.github.io/
+Personal academic homepage: https://ronintan.github.io/
 
 Static HTML, CSS, and JavaScript with English and Chinese views.
 

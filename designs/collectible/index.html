@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" data-language="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Song Tan (谭松) — a playful collectible-style academic homepage.">
+  <title>Song Tan · Collector's Edition</title>
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <script>
+    try {
+      document.documentElement.dataset.language = localStorage.getItem('song-language') === 'zh' ? 'zh' : 'en';
+      document.documentElement.lang = document.documentElement.dataset.language === 'zh' ? 'zh-CN' : 'en';
+    } catch (error) {}
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <script src="../../assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main"><span class="en">Skip to content</span><span class="zh">跳至正文</span></a>
+  <header>
+    <a class="logo" href="#main"><span>ST</span> Collector's Edition</a>
+    <nav aria-label="Main navigation"><a href="#about"><span class="en">Profile</span><span class="zh">简介</span></a><a href="#papers"><span class="en">Papers</span><span class="zh">论文</span></a><a href="#education"><span class="en">Story</span><span class="zh">经历</span></a></nav>
+    <div class="language" role="group" aria-label="Language / 语言"><button data-language="en" aria-pressed="true">EN</button><button data-language="zh" aria-pressed="false">中文</button></div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="series">COLLECTOR'S SERIES — 001</span>
+        <h1><span>Song Tan</span><em>谭松</em></h1>
+        <p class="headline"><span class="en">The bridge doctor.</span><span class="zh">让震损桥梁重新站起来。</span></p>
+        <p class="lead"><span class="en">A civil engineering researcher studying CFRP repair and seismic recovery in high-speed railway bridges.</span><span class="zh">研究高铁桥梁震后 CFRP 修复与性能恢复的土木工程研究者。</span></p>
+        <div class="cta"><a class="button primary" href="#about"><span class="en">Meet the figure</span><span class="zh">认识我</span></a><a class="button" href="#papers"><span class="en">Collect papers</span><span class="zh">收集论文</span></a></div>
+      </div>
+      <div class="toy-stage">
+        <div class="blob blob-a"></div><div class="blob blob-b"></div>
+        <span class="spark spark-a">✦</span><span class="spark spark-b">✧</span><span class="spark spark-c">✦</span>
+        <img src="toy-character.png" alt="Original collectible toy figure of a civil engineering researcher holding a CFRP-repaired bridge pier">
+        <p class="toy-label"><b>MECHLAB</b><span>Engineer / Researcher</span><em>EDITION 01</em></p>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-label"><span class="dot"></span>Profile card</div>
+      <div class="about-grid">
+        <h2><span class="en">Curious mind.<br>Practical mission.</span><span class="zh">好奇的心，<br>工程的问题。</span></h2>
+        <div class="about-text">
+          <p><span class="en">I am a master's student in the School of Civil Engineering at Central South University, advised by Liqiang Jiang and Fengqi Guo.</span><span class="zh">我是中南大学土木工程学院硕士研究生，师从江力强老师和郭风琪老师。</span></p>
+          <p><span class="en">I study how CFRP repair restores earthquake-damaged railway bridge piers. Through experiments, nonlinear analysis, and interpretable machine learning, I connect component repair with bridge–track system recovery.</span><span class="zh">我研究 CFRP 修复如何恢复震损铁路桥墩的抗震性能，并通过试验、非线性分析和可解释机器学习，将构件修复与桥轨系统性能恢复联系起来。</span></p>
+          <div class="socials"><a href="mailto:mailto:tansong@csu.edu.cn">Email</a><a href="https://scholar.google.com/citations?hl=zh-CN&amp;user=KqbaW3oAAAAJ" target="_blank" rel="noopener noreferrer">Scholar</a><a href="https://orcid.org/0009-0006-5128-3348" target="_blank" rel="noopener noreferrer">ORCID</a><a href="https://www.researchgate.net/profile/Song-Tan-11" target="_blank" rel="noopener noreferrer">ResearchGate</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section traits">
+      <div class="section-label"><span class="dot"></span>Skill charms</div>
+      <div class="charm-grid">
+        <article class="charm peach"><span>✦</span><h2><span class="en">Bridge repair</span><span class="zh">桥梁修复</span></h2><p><span class="en">Component tests + OpenSeesPy</span><span class="zh">构件试验 + OpenSeesPy</span></p></article>
+        <article class="charm blue"><span>◉</span><h2><span class="en">Smart prediction</span><span class="zh">智能预测</span></h2><p><span class="en">Interpretable ML + optimisation</span><span class="zh">可解释机器学习 + 优化</span></p></article>
+        <article class="charm lime"><span>↗</span><h2><span class="en">System recovery</span><span class="zh">系统恢复</span></h2><p><span class="en">Bridge–track interaction</span><span class="zh">桥轨相互作用</span></p></article>
+      </div>
+    </section>
+
+    <section id="papers" class="section">
+      <div class="section-label"><span class="dot"></span>Paper collection</div>
+      <div class="paper-grid">
+        <article class="paper pink"><div class="card-top"><span>No. 01</span><span>2026</span></div><p class="journal">Journal of Bridge Engineering · 31(9)</p><h2><a href="https://doi.org/10.1061/JBENF2.BEENG-7962" target="_blank" rel="noopener noreferrer">Effects of CFRP-Repaired Round-End RC Hollow Piers on Postearthquake Recovery of High-Speed Railway Track–Bridge Systems</a></h2><p class="authors"><strong>Song Tan</strong>, Liqiang Jiang, Li-zhong Jiang, Wangbao Zhou, Juntao Liu, Fengqi Guo</p><a class="paper-link" href="https://doi.org/10.1061/JBENF2.BEENG-7962" target="_blank" rel="noopener noreferrer">DOI ↗</a></article>
+        <article class="paper cream"><div class="card-top"><span>No. 02</span><span>2026</span></div><p class="journal">Computer Modeling in Engineering &amp; Sciences · 148(2)</p><h2><a href="https://doi.org/10.32604/cmes.2026.086426" target="_blank" rel="noopener noreferrer">Interpretable Machine-Learning Prediction of Seismic Performance of Earthquake-Damaged CFRP-Repaired Hollow Bridge Piers</a></h2><p class="authors">Fengqi Guo, <strong>Song Tan</strong>, Liqiang Jiang, Wei Guo, Lizhong Jiang</p><a class="paper-link" href="https://doi.org/10.32604/cmes.2026.086426" target="_blank" rel="noopener noreferrer">Open access ↗</a></article>
+        <article class="paper blue"><div class="card-top"><span>No. 03</span><span>2026</span></div><p class="journal">Engineering Structures · 365</p><h2><a href="https://doi.org/10.1016/j.engstruct.2026.123253" target="_blank" rel="noopener noreferrer">Machine learning-based optimization on CFRP repairs for earthquake-damaged round-ended hollow piers in a high-speed railway bridge</a></h2><p class="authors"><strong>Song Tan</strong>, Liqiang Jiang, Li-zhong Jiang, Wangbao Zhou, Juntao Liu, Fengqi Guo</p><a class="paper-link" href="https://doi.org/10.1016/j.engstruct.2026.123253" target="_blank" rel="noopener noreferrer">DOI ↗</a></article>
+      </div>
+    </section>
+
+    <section id="education" class="section story">
+      <div class="section-label"><span class="dot"></span>Origin story</div>
+      <div class="timeline">
+        <div class="year">2024—<span class="en">now</span><span class="zh">至今</span></div><div class="path"><i></i><h2>Central South University</h2><p><span class="en">School of Civil Engineering · Master's Student</span><span class="zh">土木工程学院 · 硕士研究生</span></p></div>
+        <div class="year">2020—2024</div><div class="path"><i></i><h2>Chang'an University</h2><p><span class="en">School of Highway · Undergraduate</span><span class="zh">公路学院 · 本科生</span></p></div>
+      </div>
+    </section>
+  </main>
+  <footer><span>© 2026 Song Tan / 谭松</span><a href="../../">Return to main page ↗</a></footer>
+</body>
+</html>

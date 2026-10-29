@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" data-language="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Song Tan (谭松) — a pixel-inspired academic research profile.">
+  <title>Song Tan / 8-BIT RESEARCH LAB</title>
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <script>
+    try {
+      document.documentElement.dataset.language = localStorage.getItem('song-language') === 'zh' ? 'zh' : 'en';
+      document.documentElement.lang = document.documentElement.dataset.language === 'zh' ? 'zh-CN' : 'en';
+    } catch (error) {}
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <script src="../../assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">SKIP TO CONTENT</a>
+  <header class="topbar">
+    <a class="logo" href="#main">ST//LAB</a>
+    <nav aria-label="Main navigation"><a href="#about">01.ABOUT</a><a href="#research">02.RESEARCH</a><a href="#papers">03.PAPERS</a></nav>
+    <div class="language" role="group" aria-label="Language / 语言"><button data-language="en" aria-pressed="true">EN</button><button data-language="zh" aria-pressed="false">中文</button></div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="status"><span class="blink">●</span> PLAYER PROFILE / LOADED</p>
+        <h1><span>Song Tan</span><em>谭松</em></h1>
+        <p class="subtitle"><span class="en">SEISMIC REPAIR RESEARCHER</span><span class="zh">高铁桥梁震后修复研究者</span></p>
+        <p class="intro"><span class="en">I study how CFRP repair restores earthquake-damaged high-speed railway bridge piers, and how those repairs affect the bridge and track.</span><span class="zh">我研究 CFRP 如何修复震损高铁桥墩，以及修复后对桥轨系统的影响。</span></p>
+        <div class="hero-actions"><a href="#papers">VIEW PUBLICATIONS ↓</a><a href="mailto:mailto:tansong@csu.edu.cn">CONTACT ↗</a></div>
+      </div>
+      <div class="bridge-art" aria-hidden="true">
+        <div class="sun"></div>
+        <div class="pixels"></div>
+        <img src="pixel-pier.svg" alt="">
+        <div class="river"></div>
+        <span class="coordinate">X 104.07 / Y 30.57<br>CHANGSHA · CN</span>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-head"><span>01</span><h2><span class="en">PLAYER INFO</span><span class="zh">基本信息</span></h2><span class="line"></span></div>
+      <div class="terminal">
+        <p><b>&gt; WHOAMI</b></p>
+        <p><span class="en">Master's student at Central South University, advised by Liqiang Jiang and Fengqi Guo.</span><span class="zh">中南大学硕士研究生，师从江力强老师和郭风琪老师。</span></p>
+        <p><b>&gt; FIELD</b></p>
+        <p><span class="en">CFRP repair / RC bridge piers / nonlinear FEM / interpretable ML / bridge–track systems</span><span class="zh">CFRP 修复 / 钢筋混凝土桥墩 / 非线性有限元 / 可解释机器学习 / 桥轨系统</span></p>
+        <p><b>&gt; STATUS</b> <span class="blink">ONLINE</span></p>
+      </div>
+    </section>
+
+    <section id="research" class="section">
+      <div class="section-head"><span>02</span><h2><span class="en">MISSION MAP</span><span class="zh">研究任务</span></h2><span class="line"></span></div>
+      <div class="missions">
+        <article><span class="num">01</span><div class="icon">▦</div><h3><span class="en">PIER DAMAGE</span><span class="zh">桥墩震损</span></h3><p><span class="en">Characterize damage and quantify the seismic performance recovered by CFRP repair.</span><span class="zh">表征震损状态，量化 CFRP 修复恢复的抗震性能。</span></p></article>
+        <article><span class="num">02</span><div class="icon">⌁</div><h3><span class="en">PREDICT</span><span class="zh">性能预测</span></h3><p><span class="en">Build interpretable machine-learning models for multiple performance indicators.</span><span class="zh">建立面向多性能指标的可解释机器学习模型。</span></p></article>
+        <article><span class="num">03</span><div class="icon">╱╲</div><h3><span class="en">SYSTEM</span><span class="zh">桥轨系统</span></h3><p><span class="en">Connect component-level repair effects to bridge–track system recovery.</span><span class="zh">将构件修复效果延伸至桥轨系统性能恢复。</span></p></article>
+      </div>
+    </section>
+
+    <section id="papers" class="section">
+      <div class="section-head"><span>03</span><h2><span class="en">PUBLICATIONS</span><span class="zh">学术论文</span></h2><span class="line"></span></div>
+      <div class="levels">
+        <article><p class="level">LEVEL 01 <span>2026</span></p><h3><a href="https://doi.org/10.1061/JBENF2.BEENG-7962" target="_blank" rel="noopener noreferrer">Effects of CFRP-Repaired Round-End RC Hollow Piers on Postearthquake Recovery of High-Speed Railway Track–Bridge Systems</a></h3><p class="authors"><strong>Song Tan</strong>, Liqiang Jiang, Li-zhong Jiang, Wangbao Zhou, Juntao Liu, Fengqi Guo</p><p class="venue">JOURNAL OF BRIDGE ENGINEERING · 31(9) · 04026054</p><a class="unlock" href="https://doi.org/10.1061/JBENF2.BEENG-7962" target="_blank" rel="noopener noreferrer">UNLOCK PAPER ↗</a></article>
+        <article><p class="level">LEVEL 02 <span>2026</span></p><h3><a href="https://doi.org/10.32604/cmes.2026.086426" target="_blank" rel="noopener noreferrer">Interpretable Machine-Learning Prediction of Seismic Performance of Earthquake-Damaged CFRP-Repaired Hollow Bridge Piers</a></h3><p class="authors">Fengqi Guo, <strong>Song Tan</strong>, Liqiang Jiang, Wei Guo, Lizhong Jiang</p><p class="venue">COMPUTER MODELING IN ENGINEERING &amp; SCIENCES · 148(2) · 19</p><a class="unlock" href="https://doi.org/10.32604/cmes.2026.086426" target="_blank" rel="noopener noreferrer">UNLOCK PAPER ↗</a></article>
+        <article><p class="level">LEVEL 03 <span>2026</span></p><h3><a href="https://doi.org/10.1016/j.engstruct.2026.123253" target="_blank" rel="noopener noreferrer">Machine learning-based optimization on CFRP repairs for earthquake-damaged round-ended hollow piers in a high-speed railway bridge</a></h3><p class="authors"><strong>Song Tan</strong>, Liqiang Jiang, Li-zhong Jiang, Wangbao Zhou, Juntao Liu, Fengqi Guo</p><p class="venue">ENGINEERING STRUCTURES · 365 · 123253</p><a class="unlock" href="https://doi.org/10.1016/j.engstruct.2026.123253" target="_blank" rel="noopener noreferrer">UNLOCK PAPER ↗</a></article>
+      </div>
+    </section>
+
+    <section id="education" class="section education">
+      <div class="section-head"><span>04</span><h2><span class="en">CHECKPOINTS</span><span class="zh">教育经历</span></h2><span class="line"></span></div>
+      <div class="checkpoint"><time>2024—∞</time><div><strong>CENTRAL SOUTH UNIVERSITY</strong><p><span class="en">School of Civil Engineering / Master's</span><span class="zh">土木工程学院 / 硕士研究生</span></p></div></div>
+      <div class="checkpoint"><time>2020—24</time><div><strong>CHANG'AN UNIVERSITY</strong><p><span class="en">School of Highway / Undergraduate</span><span class="zh">公路学院 / 本科生</span></p></div></div>
+    </section>
+  </main>
+  <footer><span>© 2026 Song Tan / 谭松</span><span class="profiles"><a href="https://scholar.google.com/citations?hl=zh-CN&amp;user=KqbaW3oAAAAJ" target="_blank" rel="noopener noreferrer">GS</a><a href="https://orcid.org/0009-0006-5128-3348" target="_blank" rel="noopener noreferrer">ORCID</a><a href="https://www.researchgate.net/profile/Song-Tan-11" target="_blank" rel="noopener noreferrer">RG</a><a href="../../">MAIN ↗</a></span></footer>
+</body>
+</html>

@@ -1,97 +1,400 @@
-<!doctype html>
-<html lang="en" data-language="en">
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Song Tan (谭松), master's student at Central South University. Research profile and publications in earthquake engineering, CFRP repair, and railway bridge resilience.">
-  <meta property="og:title" content="Song Tan | Central South University">
-  <meta property="og:description" content="Research profile and publications of Song Tan (谭松).">
-  <meta property="og:type" content="profile">
-  <meta property="og:url" content="https://ronintan.github.io/">
-  <link rel="canonical" href="https://ronintan.github.io/">
-  <title>Song Tan | Central South University</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <script>
-    try {
-      document.documentElement.dataset.language = localStorage.getItem('song-language') === 'zh' ? 'zh' : 'en';
-      document.documentElement.lang = document.documentElement.dataset.language === 'zh' ? 'zh-CN' : 'en';
-    } catch (error) { /* The default language remains available without storage. */ }
-  </script>
-  <link rel="stylesheet" href="assets/site.css">
-  <script src="assets/site.js" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Song Tan","alternateName":"谭松","jobTitle":"Master's Student","affiliation":{"@type":"CollegeOrUniversity","name":"Central South University"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Chang'an University"},"sameAs":["https://www.researchgate.net/profile/Song-Tan-11","https://orcid.org/0009-0006-5128-3348","https://scholar.google.com/citations?hl=zh-CN&user=KqbaW3oAAAAJ"],"knowsAbout":["Earthquake engineering","High-speed railway bridges","CFRP repair","Machine learning"]}</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Song Tan 谭松</title>
+<meta name="description" content="Song Tan 谭松，中南大学土木工程学院硕士研究生。研究方向：高铁桥梁震后 CFRP 修复、非线性有限元、可解释机器学习。" />
+<meta name="theme-color" content="#FFD23F" />
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Song Tan 谭松" />
+<meta property="og:description" content="中南大学土木工程学院硕士研究生 · 高铁桥梁震后 CFRP 修复 / 可解释机器学习" />
+<meta property="og:locale" content="zh_CN" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FFD23F'/%3E%3Crect x='2.5' y='2.5' width='27' height='27' fill='none' stroke='%23111' stroke-width='3'/%3E%3Ctext x='16' y='23.5' font-family='Arial Black,Arial,sans-serif' font-size='17' font-weight='900' text-anchor='middle' fill='%23111'%3ET%3C/text%3E%3C/svg%3E" />
+<style>
+  :root{
+    --ink:#111111;
+    --paper:#FFFCF0;
+    --white:#FFFFFF;
+    --pink:#FF4D8D;
+    --blue:#3D5AFE;
+    --yellow:#FFD23F;
+    --mint:#00E5A0;
+    --heavy:"Arial Black","Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    --sans:"Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    --mono:"SF Mono","JetBrains Mono",Consolas,"Courier New",monospace;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--sans);font-size:15.5px;line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(var(--ink) .5px, transparent .5px);
+    background-size:14px 14px;
+    background-position:0 0;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--yellow)}
+
+  .page{max-width:1120px;margin:0 auto;padding:0 26px 70px}
+
+  /* 顶条 */
+  .topbar{
+    background:var(--ink);color:var(--paper);
+    border-bottom:3px solid var(--ink);
+    position:sticky;top:0;z-index:30;
+  }
+  .topbar .in{
+    max-width:1120px;margin:0 auto;padding:12px 26px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .topbar .nm{
+    font-family:var(--heavy);font-size:15px;letter-spacing:-.02em;
+  }
+  .topbar .nm span{color:var(--yellow)}
+  .topbar nav{display:flex;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase}
+  .topbar nav a{
+    border:2px solid var(--paper);padding:5px 9px;transition:background .12s,color .12s;
+  }
+  .topbar nav a:hover{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+
+  /* 首屏 */
+  .hero{padding:54px 0 40px;position:relative}
+  .kicker{
+    display:inline-block;background:var(--mint);border:3px solid var(--ink);
+    padding:6px 12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;
+    text-transform:uppercase;font-weight:700;box-shadow:4px 4px 0 var(--ink);
+    transform:rotate(-1.2deg);
+  }
+  h1{
+    margin:24px 0 0;font-family:var(--heavy);font-weight:900;
+    font-size:clamp(56px,16vw,206px);line-height:.82;letter-spacing:-.055em;
+    text-transform:uppercase;
+  }
+  h1 .l1{display:block}
+  h1 .l2{
+    display:inline-block;background:var(--yellow);border:4px solid var(--ink);
+    box-shadow:10px 10px 0 var(--ink);padding:0 .06em .04em;
+    transform:rotate(-1deg);margin-top:.04em;
+  }
+  .zh-line{
+    display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-top:26px;
+  }
+  .zh-line .zh{
+    font-size:26px;letter-spacing:.4em;font-weight:700;
+  }
+  .zh-line .role{
+    font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:#3A3A3A;
+  }
+
+  .hero-grid{
+    display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:34px;
+    margin-top:34px;align-items:start;
+  }
+  .affil{font-size:14.5px;line-height:1.95;margin:0}
+  .affil b{font-weight:700}
+  .affil .zh{display:block;margin-top:4px;font-size:13.5px;color:#4A4A4A}
+
+  .links{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+  .links a{
+    display:inline-flex;align-items:center;gap:6px;
+    border:3px solid var(--ink);background:var(--white);padding:7px 11px;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+    box-shadow:4px 4px 0 var(--ink);
+    transition:transform .08s,box-shadow .08s,background .12s;
+  }
+  .links a:hover{background:var(--blue);color:#fff}
+  .links a:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
+
+  /* 信息面板 */
+  .info{
+    border:3px solid var(--ink);background:var(--blue);color:#fff;box-shadow:8px 8px 0 var(--ink);
+    align-self:start;
+  }
+  .info .hd{
+    background:var(--ink);color:var(--paper);border-bottom:3px solid var(--ink);
+    padding:8px 12px;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+    display:flex;justify-content:space-between;
+  }
+  .info .hd span:last-child{color:var(--yellow)}
+  .info .bd{padding:18px 16px}
+  .info .affil{color:#fff;font-size:14px}
+  .info .affil .zh{color:rgba(255,255,255,.75)}
+  .info .links{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:7px}
+  .info .links a{width:100%;justify-content:center}
+  .info .links a{background:transparent;color:#fff;border-color:#fff;box-shadow:3px 3px 0 rgba(0,0,0,.9)}
+  .info .links a:hover{background:var(--yellow);color:var(--ink);border-color:var(--ink)}
+  .info dl{margin:18px 0 0;padding-top:6px;border-top:3px solid var(--ink)}
+  .info div.row{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:2px dashed rgba(255,255,255,.35)}
+  .info div.row:last-child{border-bottom:none}
+  .info dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+  .info dd{margin:0;font-size:13px;font-weight:700;text-align:right}
+
+  /* 章节卡片 */
+  .card{
+    border:3px solid var(--ink);background:var(--white);box-shadow:8px 8px 0 var(--ink);
+    margin:0 0 26px;
+  }
+  .card-hd{
+    display:flex;align-items:center;gap:14px;
+    border-bottom:3px solid var(--ink);padding:11px 16px;
+  }
+  .card-hd .idx{
+    font-family:var(--heavy);font-size:13px;background:var(--ink);color:var(--paper);
+    padding:3px 8px;letter-spacing:.02em;
+  }
+  .card-hd h2{
+    margin:0;font-family:var(--heavy);font-size:16px;letter-spacing:-.01em;text-transform:uppercase;
+  }
+  .card-hd .zh{
+    margin-left:auto;font-size:13px;letter-spacing:.24em;color:#444;
+  }
+  .c-pink .card-hd{background:var(--pink);color:var(--ink)}
+  .c-mint .card-hd{background:var(--mint)}
+  .c-yellow .card-hd{background:var(--yellow)}
+  .card-bd{padding:26px 22px}
+
+  p{margin:0 0 16px;color:#2B2B2B;font-size:15px;line-height:1.9;max-width:62ch}
+  p:last-child{margin-bottom:0}
+  p.zh{color:#5A5A5A;font-size:14px}
+  p b{font-weight:700;color:var(--ink)}
+
+  /* 论文 */
+  .pub{
+    display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:18px;
+    padding:22px 0;border-bottom:3px solid var(--ink);
+  }
+  .pub:last-child{border-bottom:none;padding-bottom:0}
+  .pub:first-child{padding-top:0}
+  .pub .no{
+    width:64px;height:64px;border:3px solid var(--ink);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--heavy);font-size:19px;
+    box-shadow:3px 3px 0 var(--ink);
+  }
+  .pub:nth-child(1) .no{background:var(--pink)}
+  .pub:nth-child(2) .no{background:var(--yellow)}
+  .pub:nth-child(3) .no{background:var(--mint)}
+  .pub h3{
+    margin:0 0 10px;font-size:16px;line-height:1.6;font-weight:700;letter-spacing:-.01em;max-width:54ch;
+  }
+  .pub .au{font-family:var(--mono);font-size:10.5px;line-height:1.9;color:#555;margin:0 0 3px;letter-spacing:.01em}
+  .pub .au b{color:var(--ink);font-weight:700}
+  .pub .ve{font-family:var(--mono);font-size:10.5px;line-height:1.9;color:#333;margin:0}
+  .pub .ve em{font-style:italic}
+  .pub .go{
+    align-self:start;white-space:nowrap;
+    border:3px solid var(--ink);background:var(--white);padding:8px 12px;
+    font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+    box-shadow:4px 4px 0 var(--ink);
+    transition:transform .08s,box-shadow .08s,background .12s,color .12s;
+  }
+  .pub .go:hover{background:var(--ink);color:var(--paper)}
+  .pub .go:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
+
+  /* 教育 */
+  .edu{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .edu .blk{
+    border:3px solid var(--ink);padding:18px 16px;box-shadow:5px 5px 0 var(--ink);
+  }
+  .edu .blk.y{background:var(--yellow)}
+  .edu .blk.m{background:var(--mint)}
+  .edu .yr{
+    display:inline-block;background:var(--ink);color:var(--paper);
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;padding:4px 8px;margin-bottom:12px;
+  }
+  .edu .nm{font-family:var(--heavy);font-size:16px;margin:0 0 6px;letter-spacing:-.01em}
+  .edu .nm span{font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.1em;margin-left:8px}
+  .edu .dp{font-family:var(--mono);font-size:10px;line-height:1.9;margin:0;color:#1A1A1A}
+
+  /* 页脚 */
+  footer{
+    background:var(--ink);color:var(--paper);border-top:3px solid var(--ink);
+    margin-top:14px;
+  }
+  footer .in{
+    max-width:1120px;margin:0 auto;padding:26px;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+  }
+  footer a:hover{color:var(--yellow)}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:26px}
+    .status{max-width:420px}
+  }
+  @media (max-width:640px){
+    .page{padding:0 14px 48px}
+    .topbar .in{padding:10px 14px}
+    .topbar nav a{padding:4px 7px;font-size:9.5px}
+    .topbar nav a:nth-child(3){display:none}
+    .hero{padding:34px 0 26px}
+    .card-bd{padding:20px 15px}
+    .pub{grid-template-columns:48px minmax(0,1fr);gap:12px}
+    .pub .no{width:48px;height:48px;font-size:15px}
+    .pub .go{grid-column:2;justify-self:start;margin-top:4px}
+    .edu{grid-template-columns:1fr}
+    h1{font-size:clamp(48px,15vw,86px)}
+    .zh-line .zh{font-size:20px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
-  <a class="skip-link" href="#main"><span class="en">Skip to content</span><span class="zh">跳至正文</span></a>
-  <header class="site-header">
-    <div class="header-inner">
-      <nav class="top-nav" aria-label="Main navigation">
-        <a href="#about"><span class="en">About</span><span class="zh">关于</span></a>
-        <a href="#publications"><span class="en">Publications</span><span class="zh">论文</span></a>
-        <a href="#education"><span class="en">Education</span><span class="zh">教育经历</span></a>
-      </nav>
-      <div class="header-links">
-        <a href="https://github.com/RoninTan" target="_blank" rel="noopener noreferrer" aria-label="Song Tan on GitHub">GitHub ↗</a>
-        <div class="language-switch" role="group" aria-label="Language / 语言">
-          <button type="button" data-language="en" aria-pressed="true">EN</button>
-          <button type="button" data-language="zh" aria-pressed="false">中文</button>
+
+<div class="topbar">
+  <div class="in">
+    <a class="nm" href="#top">SONG <span>TAN</span></a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#pubs">Publications</a>
+      <a href="#education">Education</a>
+      <a href="https://github.com/RoninTan" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page" id="top">
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="left">
+        <span class="kicker">Master's Student · 硕士研究生</span>
+        <h1>
+          <span class="l1">Song</span>
+          <span class="l2">Tan</span>
+        </h1>
+
+        <div class="zh-line">
+          <span class="zh">谭&nbsp;松</span>
+          <span class="role">Central South University / Changsha</span>
+        </div>
+      </div>
+
+      <aside class="info">
+        <div class="hd"><span>Info</span><span>2026</span></div>
+        <div class="bd">
+          <p class="affil">
+            <b>School of Civil Engineering</b><br />
+            Central South University<br />
+            Changsha, China
+            <span class="zh">中南大学土木工程学院 · 中国长沙</span>
+          </p>
+
+          <ul class="links">
+            <li><a href="mailto:tansong@csu.edu.cn">Email ↗</a></li>
+            <li><a href="https://scholar.google.com/citations?hl=zh-CN&amp;user=KqbaW3oAAAAJ" target="_blank" rel="noopener">Scholar ↗</a></li>
+            <li><a href="https://orcid.org/0009-0006-5128-3348" target="_blank" rel="noopener">ORCID ↗</a></li>
+            <li><a href="https://www.researchgate.net/profile/Song-Tan-11" target="_blank" rel="noopener">ResearchGate ↗</a></li>
+          </ul>
+
+          <dl>
+            <div class="row"><dt>Position</dt><dd>硕士研究生</dd></div>
+            <div class="row"><dt>Advisors</dt><dd>江力强 · 郭风琪</dd></div>
+            <div class="row"><dt>Papers</dt><dd>3 / 2026</dd></div>
+          </dl>
+        </div>
+      </aside>
+    </div>
+
+  </section>
+
+  <section class="card c-pink" id="about">
+    <div class="card-hd">
+      <span class="idx">01</span>
+      <h2>About</h2>
+      <span class="zh">关于</span>
+    </div>
+    <div class="card-bd">
+      <p>
+        I'm a master's student in the School of Civil Engineering at Central South University,
+        advised by <b>Liqiang Jiang</b> and <b>Fengqi Guo</b>.
+      </p>
+      <p class="zh">中南大学土木工程学院硕士研究生，师从江力强、郭风琪老师。</p>
+
+      <p>
+        I study CFRP repair of earthquake-damaged high-speed railway bridge piers — experiments and
+        nonlinear finite-element analysis to quantify seismic recovery and its effect on the bridge
+        and track, and interpretable machine-learning models to predict it.
+      </p>
+      <p class="zh">
+        研究高铁桥梁震损桥墩的 CFRP 修复：以试验与非线性有限元量化抗震性能的恢复及其对桥梁、轨道的影响，
+        并用可解释机器学习模型预测修复效果。
+      </p>
+    </div>
+  </section>
+
+  <section class="card c-yellow" id="pubs">
+    <div class="card-hd">
+      <span class="idx">02</span>
+      <h2>Publications</h2>
+      <span class="zh">学术论文</span>
+    </div>
+    <div class="card-bd">
+      <article class="pub">
+        <span class="no">01</span>
+        <div>
+          <h3>Effects of CFRP-Repaired Round-End RC Hollow Piers on Postearthquake Recovery of High-Speed Railway Track–Bridge Systems</h3>
+          <p class="au"><b>Song Tan</b>, Liqiang Jiang, Li-zhong Jiang, Wangbao Zhou, Juntao Liu, Fengqi Guo</p>
+          <p class="ve"><em>Journal of Bridge Engineering</em>, 31(9), 04026054</p>
+        </div>
+        <a class="go" href="https://doi.org/10.1061/JBENF2.BEENG-7962" target="_blank" rel="noopener">DOI ↗</a>
+      </article>
+
+      <article class="pub">
+        <span class="no">02</span>
+        <div>
+          <h3>Interpretable Machine-Learning Prediction of Seismic Performance of Earthquake-Damaged CFRP-Repaired Hollow Bridge Piers</h3>
+          <p class="au">Fengqi Guo, <b>Song Tan</b>, Liqiang Jiang, Wei Guo, Lizhong Jiang</p>
+          <p class="ve"><em>Computer Modeling in Engineering &amp; Sciences</em>, 148(2), Article 19</p>
+        </div>
+        <a class="go" href="https://doi.org/10.32604/cmes.2026.086426" target="_blank" rel="noopener">Open ↗</a>
+      </article>
+
+      <article class="pub">
+        <span class="no">03</span>
+        <div>
+          <h3>Machine learning-based optimization on CFRP repairs for earthquake-damaged round-ended hollow piers in a high-speed railway bridge</h3>
+          <p class="au"><b>Song Tan</b>, Liqiang Jiang, Li-zhong Jiang, Wangbao Zhou, Juntao Liu, Fengqi Guo</p>
+          <p class="ve"><em>Engineering Structures</em>, 365, 123253</p>
+        </div>
+        <a class="go" href="https://doi.org/10.1016/j.engstruct.2026.123253" target="_blank" rel="noopener">DOI ↗</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="card c-mint" id="education">
+    <div class="card-hd">
+      <span class="idx">03</span>
+      <h2>Education</h2>
+      <span class="zh">教育经历</span>
+    </div>
+    <div class="card-bd">
+      <div class="edu">
+        <div class="blk y">
+          <span class="yr">2024 — PRESENT</span>
+          <p class="nm">Central South University<span>中南大学</span></p>
+          <p class="dp">School of Civil Engineering<br />Master's Student · 硕士研究生</p>
+        </div>
+        <div class="blk m">
+          <span class="yr">2020 — 2024</span>
+          <p class="nm">Chang'an University<span>长安大学</span></p>
+          <p class="dp">School of Highway<br />Undergraduate · 本科生</p>
         </div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <div class="page">
-    <aside class="profile-card" aria-labelledby="profile-title">
-      <div class="profile-avatar"><img src="assets/monogram.svg?v=20261029" alt="Song Tan monogram / 谭松姓名标识"></div>
-      <div class="profile-copy">
-        <h1 id="profile-title">Song Tan <span lang="zh-CN">谭松</span></h1>
-        <p class="role"><span class="en">Master's Student</span><span class="zh">硕士研究生</span></p>
-        <p class="affiliation"><span class="en">School of Civil Engineering<br>Central South University<br>Changsha, China</span><span class="zh">中南大学土木工程学院<br>中国 · 长沙</span></p>
-        <ul class="profile-links">
-          <li><a href="mailto:tansong@csu.edu.cn">tansong@csu.edu.cn</a></li>
-          <li><a href="https://scholar.google.com/citations?hl=zh-CN&amp;user=KqbaW3oAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
-          <li><a href="https://orcid.org/0009-0006-5128-3348" target="_blank" rel="noopener noreferrer">ORCID</a></li>
-          <li><a href="https://www.researchgate.net/profile/Song-Tan-11" target="_blank" rel="noopener noreferrer">ResearchGate</a></li>
-        </ul>
-      </div>
-    </aside>
+</div>
 
-    <main id="main" class="main-content">
-      <section id="about" class="content-section about-section" aria-labelledby="about-heading">
-        <h2 id="about-heading"><span class="en">About</span><span class="zh">关于我</span></h2>
-        <p><span class="en">I'm a master's student in the School of Civil Engineering at Central South University, advised by Liqiang Jiang and Fengqi Guo.</span><span class="zh">我目前在中南大学土木工程学院攻读土木水利硕士学位，师从江力强老师和郭风琪老师。</span></p>
-        <p><span class="en">I study the repair of earthquake-damaged high-speed railway bridges, particularly CFRP repair of bridge piers. I use experiments and nonlinear finite-element analysis to examine how much seismic performance the piers recover and how the repairs affect the bridge and track. I also work with interpretable machine-learning models to predict the performance of repaired piers.</span><span class="zh">我主要研究高铁桥梁的震后修复，尤其是 CFRP 对震损桥墩的修复效果。我通过试验和非线性有限元分析，考察桥墩的抗震性能能恢复到什么程度，以及修复对桥梁和轨道的影响，也用可解释机器学习模型预测修复后的桥墩性能。</span></p>
-      </section>
-
-      <section id="publications" class="content-section" aria-labelledby="publications-heading">
-        <h2 id="publications-heading"><span class="en">Publications</span><span class="zh">学术论文</span></h2>
-        <p class="publication-year">2026</p>
-        <ol class="publication-list">
-          <li>
-              <h3><a href="https://doi.org/10.1061/JBENF2.BEENG-7962" target="_blank" rel="noopener noreferrer">Effects of CFRP-Repaired Round-End RC Hollow Piers on Postearthquake Recovery of High-Speed Railway Track–Bridge Systems</a></h3>
-              <p class="authors"><strong>Song Tan</strong>, Liqiang Jiang, Li-zhong Jiang, Wangbao Zhou, Juntao Liu, Fengqi Guo</p>
-              <p class="meta"><em>Journal of Bridge Engineering</em>, 31(9), 04026054 <a class="doi" href="https://doi.org/10.1061/JBENF2.BEENG-7962" target="_blank" rel="noopener noreferrer">DOI ↗</a></p>
-          </li>
-          <li>
-              <h3><a href="https://doi.org/10.32604/cmes.2026.086426" target="_blank" rel="noopener noreferrer">Interpretable Machine-Learning Prediction of Seismic Performance of Earthquake-Damaged CFRP-Repaired Hollow Bridge Piers</a></h3>
-              <p class="authors">Fengqi Guo, <strong>Song Tan</strong>, Liqiang Jiang, Wei Guo, Lizhong Jiang</p>
-              <p class="meta"><em>Computer Modeling in Engineering &amp; Sciences</em>, 148(2), Article 19 <a class="doi" href="https://doi.org/10.32604/cmes.2026.086426" target="_blank" rel="noopener noreferrer">Open access ↗</a></p>
-          </li>
-          <li>
-              <h3><a href="https://doi.org/10.1016/j.engstruct.2026.123253" target="_blank" rel="noopener noreferrer">Machine learning-based optimization on CFRP repairs for earthquake-damaged round-ended hollow piers in a high-speed railway bridge</a></h3>
-              <p class="authors"><strong>Song Tan</strong>, Liqiang Jiang, Li-zhong Jiang, Wangbao Zhou, Juntao Liu, Fengqi Guo</p>
-              <p class="meta"><em>Engineering Structures</em>, 365, 123253 <a class="doi" href="https://doi.org/10.1016/j.engstruct.2026.123253" target="_blank" rel="noopener noreferrer">DOI ↗</a></p>
-          </li>
-        </ol>
-      </section>
-
-      <section id="education" class="content-section education-list" aria-labelledby="education-heading">
-        <h2 id="education-heading"><span class="en">Education</span><span class="zh">教育经历</span></h2>
-        <div class="education-entry"><span class="education-year">2024–<span class="en">Present</span><span class="zh">至今</span></span><p><strong><span class="en">Central South University</span><span class="zh">中南大学</span></strong><span class="education-detail"><span class="en">School of Civil Engineering · Master's Student</span><span class="zh">土木工程学院 · 硕士研究生</span></span></p></div>
-        <div class="education-entry"><span class="education-year">2020–2024</span><p><strong><span class="en">Chang'an University</span><span class="zh">长安大学</span></strong><span class="education-detail"><span class="en">School of Highway · Undergraduate</span><span class="zh">公路学院 · 本科生</span></span></p></div>
-      </section>
-      <footer class="site-footer"><span>© 2026 Song Tan · 谭松</span><a href="https://github.com/RoninTan/RoninTan.github.io" target="_blank" rel="noopener noreferrer">GitHub Pages ↗</a></footer>
-    </main>
+<footer>
+  <div class="in">
+    <span>© 2026 Song Tan · 谭松</span>
+    <a href="https://github.com/RoninTan/RoninTan.github.io" target="_blank" rel="noopener">GitHub Pages ↗</a>
   </div>
+</footer>
+
 </body>
 </html>

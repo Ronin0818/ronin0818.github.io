@@ -37,7 +37,7 @@
   a{color:inherit;text-decoration:none}
   ::selection{background:var(--yellow)}
 
-  .page{max-width:1120px;margin:0 auto;padding:0 26px 70px}
+  .page{max-width:1320px;margin:0 auto;padding:0 32px 70px}
 
   /* 顶条 */
   .topbar{
@@ -46,7 +46,7 @@
     position:sticky;top:0;z-index:30;
   }
   .topbar .in{
-    max-width:1120px;margin:0 auto;padding:12px 26px;
+    max-width:1320px;margin:0 auto;padding:12px 32px;
     display:flex;align-items:center;justify-content:space-between;gap:16px;
   }
   .topbar .nm{
@@ -69,7 +69,7 @@
   }
   h1{
     margin:24px 0 0;font-family:var(--heavy);font-weight:900;
-    font-size:clamp(56px,16vw,206px);line-height:.82;letter-spacing:-.055em;
+    font-size:clamp(56px,13.4vw,236px);line-height:.82;letter-spacing:-.055em;
     text-transform:uppercase;
   }
   h1 .l1{display:block}
@@ -215,11 +215,46 @@
     margin-top:14px;
   }
   footer .in{
-    max-width:1120px;margin:0 auto;padding:26px;
+    max-width:1320px;margin:0 auto;padding:26px 32px;
     display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
     font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
   }
   footer a:hover{color:var(--yellow)}
+
+  /* —— 桌面大屏 —— */
+  @media (min-width:1200px){
+    h1 .l2{display:block;width:100%;box-sizing:border-box;margin-right:0}
+    .hero{padding:64px 0 46px}
+    .hero-grid{grid-template-columns:minmax(0,1fr) 392px;gap:44px}
+    .info .bd{padding:22px 20px}
+    .info .affil{font-size:15px}
+    .info dl{margin-top:22px}
+    .card-bd{padding:32px 34px}
+    .card-hd{padding:12px 20px}
+    .card-hd h2{font-size:17px}
+    p{font-size:15.5px;max-width:68ch}
+    p.zh{font-size:14px}
+    .about-cols{display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:start}
+    .about-cols .zhcol{border-left:3px solid var(--ink);padding-left:36px}
+    .about-cols .zhcol p:first-child{margin-top:0}
+    .pub{grid-template-columns:64px minmax(0,1fr) 150px;gap:24px;padding:26px 0}
+    .pub .no{width:64px;height:64px;font-size:19px}
+    .pub h3{font-size:17.5px;max-width:64ch}
+    .pub .au,.pub .ve{font-size:11px}
+    .edu{gap:26px}
+    .edu .blk{padding:24px 22px}
+  }
+  @media (min-width:1600px){
+    .page{max-width:1400px}
+    .topbar .in,footer .in{max-width:1400px}
+    h1{font-size:clamp(200px,15.2vw,320px)}
+    .hero-grid{grid-template-columns:minmax(0,1fr) 420px}
+  }
+
+  @media (max-width:1199px){
+    .about-cols .zhcol{margin-top:10px;padding-top:18px;border-top:2px dashed rgba(17,17,17,.2)}
+    .about-cols .zhcol p:first-child{margin-top:0}
+  }
 
   @media (max-width:900px){
     .hero-grid{grid-template-columns:1fr;gap:26px}
@@ -308,21 +343,27 @@
       <span class="zh">关于</span>
     </div>
     <div class="card-bd">
-      <p>
-        I'm a master's student in the School of Civil Engineering at Central South University,
-        advised by <b>Liqiang Jiang</b> and <b>Fengqi Guo</b>.
-      </p>
-      <p class="zh">中南大学土木工程学院硕士研究生，师从江力强、郭风琪老师。</p>
+      <div class="about-cols">
+        <div class="encol">
+          <p>
+            I'm a master's student in the School of Civil Engineering at Central South University,
+            advised by <b>Liqiang Jiang</b> and <b>Fengqi Guo</b>.
+          </p>
+          <p>
+            I study CFRP repair of earthquake-damaged high-speed railway bridge piers — experiments and
+            nonlinear finite-element analysis to quantify seismic recovery and its effect on the bridge
+            and track, and interpretable machine-learning models to predict it.
+          </p>
+        </div>
 
-      <p>
-        I study CFRP repair of earthquake-damaged high-speed railway bridge piers — experiments and
-        nonlinear finite-element analysis to quantify seismic recovery and its effect on the bridge
-        and track, and interpretable machine-learning models to predict it.
-      </p>
-      <p class="zh">
-        研究高铁桥梁震损桥墩的 CFRP 修复：以试验与非线性有限元量化抗震性能的恢复及其对桥梁、轨道的影响，
-        并用可解释机器学习模型预测修复效果。
-      </p>
+        <div class="zhcol">
+          <p class="zh">中南大学土木工程学院硕士研究生，师从江力强、郭风琪老师。</p>
+          <p class="zh">
+            研究高铁桥梁震损桥墩的 CFRP 修复：以试验与非线性有限元量化抗震性能的恢复及其对桥梁、轨道的影响，
+            并用可解释机器学习模型预测修复效果。
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 

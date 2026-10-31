@@ -177,6 +177,11 @@
   .contact .mail{display:inline-block;margin-top:20px;font-size:clamp(18px,2.4vw,26px);font-weight:500;color:var(--accent);border-bottom:1.5px solid currentColor;padding-bottom:2px}
   .contact .links{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:32px}
 
+  /* copy-to-clipboard confirmation for email links */
+  .toast{position:fixed;left:50%;bottom:28px;z-index:30;--r:999px;display:flex;align-items:center;gap:10px;padding:12px 18px 12px 12px;font-size:14px;font-weight:500;white-space:nowrap;opacity:0;transform:translate(-50%,16px);pointer-events:none;transition:opacity .3s,transform .3s cubic-bezier(.3,1.4,.5,1)}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+  .toast i{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:13px;color:#fff;background:#2BC48A;flex:none}
+
   footer{position:relative;z-index:1;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;padding:30px 20px 50px;font-size:13px;color:var(--ink3)}
   footer a:hover{color:var(--ink)}
 
@@ -347,6 +352,8 @@
   <a href="https://github.com/RoninTan/RoninTan.github.io" target="_blank" rel="noopener">Source ↗</a>
 </footer>
 
+<div class="glass toast" id="toast" role="status" aria-live="polite"><i aria-hidden="true">✓</i><span id="toastText"></span></div>
+
 <script>
 (function(){
   const root=document.documentElement;
@@ -373,6 +380,22 @@
       g.style.setProperty('--my',(e.clientY-r.top)+'px');
     },{passive:true});
   }
+
+  // email links also copy the address, so visitors without a mail app still get it
+  const toast=document.getElementById('toast'), toastText=document.getElementById('toastText');
+  let toastTimer;
+  function copy(text){
+    if(navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    const t=document.createElement('textarea'); t.value=text; t.setAttribute('readonly',''); t.style.position='fixed'; t.style.opacity='0';
+    document.body.appendChild(t); t.select(); let ok=false; try{ok=document.execCommand('copy')}catch(e){} t.remove();
+    return ok ? Promise.resolve() : Promise.reject();
+  }
+  document.querySelectorAll('a[href^="mailto:"]').forEach(a=>a.addEventListener('click',()=>{
+    const addr=a.getAttribute('href').slice(7);
+    copy(addr).then(()=>{toastText.textContent='已复制 '+addr},()=>{toastText.textContent='邮箱 '+addr}).finally(()=>{
+      toast.classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>toast.classList.remove('show'),3200);
+    });
+  }));
 
   // tab bar bubble tracks the section in view
   const nav=document.getElementById('nav'), bubble=document.getElementById('bubble');

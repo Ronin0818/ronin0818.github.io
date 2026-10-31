@@ -7,6 +7,6 @@ Static HTML, CSS, and JavaScript with English and Chinese views.
 Six complete design directions are available at
 https://ronintan.github.io/designs/.
 
-Edit `index.html` to update the profile, education, contact links, and publications. Styles are in `assets/site.css`; the language switch is in `assets/site.js`.
+Edit `index.html` to update the profile, education, contact links, and publications. The page is self-contained: styles and scripts are inline, and it uses system fonts only (no external requests), so it loads quickly in mainland China. The current look is a "liquid glass" design with light and dark themes.
 
 GitHub Pages publishes the `main` branch from the repository root.
